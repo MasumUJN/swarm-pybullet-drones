@@ -922,22 +922,20 @@ class BaseAviary(gym.Env):
 
         """
         #### Kin. info of all links (propellers and center of mass)
-        link_states = np.array(
-            p.getLinkStates(
-                self.DRONE_IDS[nth_drone],
-                linkIndices=[0, 1, 2, 3, 4],
-                computeLinkVelocity=1,
-                computeForwardKinematics=1,
-                physicsClientId=self.CLIENT,
-            )
+        link_states = p.getLinkStates(
+            self.DRONE_IDS[nth_drone],
+            linkIndices=[0, 1, 2, 3, 4],
+            computeLinkVelocity=1,
+            computeForwardKinematics=1,
+            physicsClientId=self.CLIENT,
         )
         #### Simple, per-propeller ground effects ##################
         prop_heights = np.array(
             [
-                link_states[0, 0][2],
-                link_states[1, 0][2],
-                link_states[2, 0][2],
-                link_states[3, 0][2],
+                link_states[0][0][2],
+                link_states[1][0][2],
+                link_states[2][0][2],
+                link_states[3][0][2],
             ]
         )
         prop_heights = np.clip(prop_heights, self.GND_EFF_H_CLIP, np.inf)
