@@ -5,7 +5,7 @@ description = "PyBullet Gym environments for single and multi-agent reinforcemen
 authors = ["Jacopo Panerati <jacopo.panerati@utoronto.ca>"]
 license = "MIT"
 readme = "pypi_description.md"
-repository = "https://github.com/utiasDSL/gym-pybullet-drones"
+repository = "https://github.com/MasumUJN/swarm-pybullet-drones"
 packages = [
     { include = "gym_pybullet_drones" }
 ]
@@ -26,5 +26,5 @@ tensorboard = "^2.9"
 [tool.poetry.dev-dependencies]
 
 [build-system]
-requires = ["poetry-core @ git+https://github.com/python-poetry/poetry-core.git@master"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
