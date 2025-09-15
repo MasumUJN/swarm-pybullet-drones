@@ -13,7 +13,7 @@ setup(
         "hydra-core",
         "tensorboard",
         "omegaconf",
-        "gym",
+        "gymnasium",
         "pybullet",
         "stable_baselines3",
         "ray[rllib]",
